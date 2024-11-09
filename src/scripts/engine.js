@@ -10,7 +10,11 @@ const emojis = [
     "👽",
     "👽",
     "😵‍💫",
-    "😵‍💫"
+    "😵‍💫",
+    "🥶",
+    "🥶",
+    "🤢",
+    "🤢"
 ];
 let openCard = []; //guardar as cartas selecionadas na memória
 
@@ -33,6 +37,12 @@ function handleClick() {
     if (openCard.length == 2) {
         setTimeout(checkMatch, 500);
     }
+
+    if (!this.classList.contains("boxMatch")) {
+        var cont = document.querySelector(".point");
+        var number = parseInt(cont.textContent) + 1;
+        cont.textContent = number;
+    }
 }
 
 function checkMatch() {
@@ -50,3 +60,10 @@ function checkMatch() {
         alert("Você venceu!");
     }
 }
+
+//var cont = document.querySelector(".point");
+
+//document.querySelector(".item").addEventListener("click", function(){
+  //var number = parseInt(cont.textContent) + 1;
+  //cont.textContent = number;
+//});
