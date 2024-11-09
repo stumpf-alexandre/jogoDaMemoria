@@ -34,3 +34,19 @@ function handleClick() {
         setTimeout(checkMatch, 500);
     }
 }
+
+function checkMatch() {
+    if (openCard[0].innerHTML === openCard[1].innerHTML) {
+        openCard[0].classList.add("boxMatch");
+        openCard[1].classList.add("boxMatch");
+    } else {
+        openCard[0].classList.remove("boxOpen");
+        openCard[1].classList.remove("boxOpen");
+    }
+
+    openCard = [];
+
+    if(document.querySelectorAll(".boxMatch").length === emojis.length) {
+        alert("Você venceu!");
+    }
+}
